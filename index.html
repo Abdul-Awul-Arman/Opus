@@ -1,148 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Opus Communications | Under Construction</title>
-    <meta name="description" content="Opus Communications is currently undergoing scheduled maintenance. We'll be back soon with something new. Thinking on a large scale.">
-    <meta name="keywords" content="Opus Communications, under construction, maintenance, dhaka, digital agency">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.opusbd.com/">
-    <meta property="og:title" content="Opus Communications - Under Construction">
-    <meta property="og:description" content="Thinking on a large scale. Something new is coming soon.">
-    <meta property="og:image" content="https://www.opusbd.com/logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Opus Communications - Under Construction">
-    <meta property="twitter:description" content="Thinking on a large scale. Something new is coming soon.">
-
-    <!-- Tailwind CSS -->
+    <title>Opus Communications - Under Construction</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts: Instrument Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome (for social icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+    <!-- Configure Tailwind to use the custom font -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'opus-blue': '#004b8d',
-                    },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-out both',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
+                        serif: ['"Instrument Serif"', 'serif'],
                     }
                 }
             }
         }
     </script>
-
     <style>
-        body {
-            background-color: #f3f4f6;
-            overflow: hidden;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(at 0% 0%, rgba(255, 179, 133, 0.4) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(230, 200, 255, 0.4) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(255, 240, 220, 0.3) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(255, 230, 230, 0.4) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(210, 230, 255, 0.4) 0px, transparent 50%);
-            filter: blur(80px);
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
         }
-
-        .social-btn {
-            @apply w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-sm transition-all duration-300 hover:scale-110 hover:bg-opus-blue;
-        }
-
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
     </style>
 </head>
-<body class="font-sans text-gray-900 min-h-screen flex items-center justify-center p-6">
+<!-- Using the dark blue color sampled directly from your logo background -->
 
-    <div class="mesh-bg"></div>
+<body
+    class="bg-[#081e3a] text-white font-serif min-h-screen flex flex-col items-center justify-center p-6 sm:p-10 selection:bg-blue-500 selection:text-white">
 
-    <div class="max-w-3xl w-full text-center">
-        
-        <!-- Main Message -->
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight animate-fade-in">
-            Sorry! We're under <br> construction maintenance!
+    <!-- Main Content Container -->
+    <div class="max-w-4xl w-full text-center flex flex-col items-center animate-fade-in py-10">
+
+
+
+        <!-- Animated Development Badge -->
+        <div
+            class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 mb-8 shadow-lg backdrop-blur-md">
+            <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.8)]"></span>
+            </span>
+            <span class="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-sky-100">Development
+                Mode</span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight tracking-wider">
+            We're building <br class="hidden md:block" /> something <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-200">new</span>.
         </h1>
 
-        <!-- Subtext -->
-        <p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed mb-8 max-w-xl mx-auto animate-fade-in delay-100">
-            Our website is currently undergoing scheduled maintenance, we will be back soon! Thank you for being so patient. Contact us for more information!
-        </p>
-
-        <!-- Address Section (Requested) -->
-        <div class="mb-12 animate-fade-in delay-100">
-            <p class="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold mb-3">Our Office</p>
-            <p class="text-xs md:text-sm text-gray-700 font-semibold italic">
-                596/C Khilgaon, Road 2, Dhaka 1219
+        <!-- Tagline -->
+        <div class="mb-16 relative px-4">
+            <p class="text-blue-300/50 italic text-2xl md:text-3xl tracking-[0.15em] font-light">
+                ...thinking on a large scale
             </p>
         </div>
 
-        <!-- Social Section -->
-        <div class="animate-fade-in delay-200">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-6">Follow us</p>
-            
-            <div class="flex items-center justify-center gap-4 mb-8">
-                <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
-            </div>
+        <!-- Contact Section (From first image) -->
+        <div class="w-full border-t border-white/10 pt-12 mt-4">
+            <h2 class="text-3xl md:text-4xl text-white mb-10 tracking-widest">Get in touch with us</h2>
 
-            <!-- Email Link -->
-            <div class="inline-block relative group">
-                <a href="mailto:info@opusbd.com" class="text-sm md:text-base font-bold text-gray-900 border-b-2 border-gray-900 pb-1 transition-colors group-hover:text-opus-blue group-hover:border-opus-blue">
-                    info@opusbd.com
-                </a>
-            </div>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left max-w-3xl mx-auto">
 
-        <!-- Secondary Info -->
-        <div class="mt-12 animate-fade-in delay-300">
-            <p class="text-[10px] text-gray-400 font-medium">
-                &copy; 2026 Opus Communications. All rights reserved.
-            </p>
+                <!-- Address Card -->
+                <div
+                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 shadow-xl">
+                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic">Address</h3>
+                    <p class="text-blue-100/90 text-xl md:text-2xl tracking-wide leading-relaxed">
+                        596/C Khilgaon, Road 2,<br>
+                        Dhaka 1219
+                    </p>
+                </div>
+
+                <!-- Contact Card -->
+                <div
+                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 shadow-xl">
+                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic">Contact</h3>
+
+                    <div class="space-y-6">
+                        <!-- Emails -->
+                        <div>
+                            <span class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Email
+                                Us</span>
+                            <a href="mailto:info@opusbd.com"
+                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider mb-1">info@opusbd.com</a>
+                            <a href="mailto:opusbd1@gmail.com"
+                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">opusbd1@gmail.com</a>
+                        </div>
+
+                        <!-- Hotlines -->
+                        <div>
+                            <span
+                                class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Hotline</span>
+                            <a href="tel:+8801711387708"
+                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider mb-1">+880
+                                1711 387708</a>
+                            <a href="tel:+8801911484826"
+                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">+880
+                                1911 484826</a>
+                        </div>
+
+                        <!-- Website -->
+                        <div class="pt-2">
+                            <span class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Web
+                                Site</span>
+                            <a href="https://www.opusbd.com" target="_blank"
+                                class="text-sky-300 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">www.opusbd.com</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
     </div>
 
 </body>
+
 </html>
