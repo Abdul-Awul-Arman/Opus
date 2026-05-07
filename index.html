@@ -64,9 +64,12 @@
     <div class="max-w-4xl w-full text-center flex flex-col items-center py-10">
 
         <!-- Logo -->
-        <div class="mb-10 w-64 md:w-80 h-auto relative flex justify-center animate-fade-in-up hover:scale-105 transition-transform duration-700 cursor-pointer">
-            <div class="animate-float">
-                <img src="image_ee8d78.png" alt="Opus Communications Logo" class="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+        <div class="mb-10 w-64 md:w-80 h-auto relative flex justify-center animate-fade-in-up hover:scale-105 transition-transform duration-700 cursor-pointer group">
+            <div class="animate-float relative">
+                <!-- Ambient glow behind the logo to refine edge imperfections from background removal -->
+                <div class="absolute inset-0 bg-sky-400/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <img src="opus_logo.png" alt="Opus Communications Logo" 
+                    class="w-full h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] relative z-10 filter contrast-125 brightness-110 group-hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.4)] transition-all duration-500"
                     onerror="this.onerror=null; this.outerHTML='<div class=\'text-5xl font-bold tracking-tighter\'><span class=\'text-white\'>OPUS</span><br><span class=\'text-2xl font-light italic tracking-normal\'>Communications</span></div>'">
             </div>
         </div>
