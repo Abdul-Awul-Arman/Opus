@@ -3,46 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opus Communications | Development Mode</title>
     
+    <!-- SEO Meta Tags -->
+    <title>Opus Communications | Under Construction</title>
+    <meta name="description" content="Opus Communications is currently undergoing scheduled maintenance. We'll be back soon with something new. Thinking on a large scale.">
+    <meta name="keywords" content="Opus Communications, under construction, maintenance, dhaka, digital agency">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.opusbd.com/">
+    <meta property="og:title" content="Opus Communications - Under Construction">
+    <meta property="og:description" content="Thinking on a large scale. Something new is coming soon.">
+    <meta property="og:image" content="https://www.opusbd.com/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Opus Communications - Under Construction">
+    <meta property="twitter:description" content="Thinking on a large scale. Something new is coming soon.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome (for social icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'opus': '#004b8d',
-                        'opus-dark': '#020617',
-                        'opus-light': '#0ea5e9',
+                        'opus-blue': '#004b8d',
                     },
                     fontFamily: {
-                        serif: ['"Instrument Serif"', 'serif'],
                         sans: ['Inter', 'sans-serif'],
                     },
                     animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out both',
                     },
                     keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-                            '50%': { opacity: '0.7', transform: 'scale(1.1)' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
@@ -51,80 +62,89 @@
     </script>
 
     <style>
+        body {
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+
         .mesh-bg {
-            background-color: #020617;
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(210, 100%, 20%, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(200, 100%, 20%, 0.15) 0px, transparent 50%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, rgba(255, 179, 133, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(230, 200, 255, 0.4) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(255, 240, 220, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255, 230, 230, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(210, 230, 255, 0.4) 0px, transparent 50%);
+            filter: blur(80px);
         }
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+
+        .social-btn {
+            @apply w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-sm transition-all duration-300 hover:scale-110 hover:bg-opus-blue;
         }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
-        .delay-400 { animation-delay: 400ms; }
-        .delay-600 { animation-delay: 600ms; }
+        .delay-300 { animation-delay: 300ms; }
     </style>
 </head>
-<body class="mesh-bg text-white font-sans min-h-screen flex items-center justify-center p-6 overflow-hidden">
+<body class="font-sans text-gray-900 min-h-screen flex items-center justify-center p-6">
 
-    <!-- Decorative Glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-opus/10 blur-[100px] rounded-full pointer-events-none animate-pulse-glow"></div>
+    <div class="mesh-bg"></div>
 
-    <div class="max-w-4xl w-full text-center relative z-10">
+    <div class="max-w-3xl w-full text-center">
         
-
-
-        <!-- Development Badge -->
-        <div class="animate-fade-in-up delay-200 mb-10">
-            <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full glass border border-opus/30 shadow-lg">
-                <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-opus-light opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-opus-light"></span>
-                </span>
-                <span class="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-opus-light">Development Mode</span>
-            </div>
-        </div>
-
-        <!-- Main Heading -->
-        <h1 class="animate-fade-in-up delay-400 text-5xl md:text-7xl font-serif leading-tight mb-6 tracking-tight">
-            We're building <br> 
-            <span class="italic text-opus-light">something new.</span>
+        <!-- Main Message -->
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight fade-up">
+            Sorry! We're under <br> construction maintenance!
         </h1>
 
-        <!-- Tagline -->
-        <p class="animate-fade-in-up delay-600 text-lg md:text-2xl text-slate-400/80 font-light italic tracking-widest mb-16">
-            ...thinking on a large scale
+        <!-- Subtext -->
+        <p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed mb-8 max-w-xl mx-auto fade-up delay-100">
+            Our website is currently undergoing scheduled maintenance, we will be back soon! Thank you for being so patient. Contact us for more information!
         </p>
 
-        <!-- Footer / Contact Info -->
-        <div class="animate-fade-in-up delay-600 pt-10 border-t border-white/5 max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center md:text-left">
-                <h3 class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Address</h3>
-                <p class="text-xs md:text-sm text-slate-300 leading-relaxed font-light">
-                    596/C Khilgaon, Road 2,<br> Dhaka 1219
-                </p>
+        <!-- Address Section (Requested) -->
+        <div class="mb-12 fade-up delay-100">
+            <p class="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold mb-3">Our Office</p>
+            <p class="text-xs md:text-sm text-gray-700 font-semibold italic">
+                596/C Khilgaon, Road 2, Dhaka 1219
+            </p>
+        </div>
+
+        <!-- Social Section -->
+        <div class="fade-up delay-200">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-6">Follow us</p>
+            
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
             </div>
-            <div class="text-center">
-                <h3 class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Email</h3>
-                <p class="text-xs md:text-sm text-slate-300 font-light">
-                    info@opusbd.com<br>opusbd1@gmail.com
-                </p>
-            </div>
-            <div class="text-center md:text-right">
-                <h3 class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Contact</h3>
-                <p class="text-xs md:text-sm text-slate-300 font-light">
-                    +880 1711 387708<br>+880 1911 484826
-                </p>
+
+            <!-- Email Link -->
+            <div class="inline-block relative group">
+                <a href="mailto:info@opusbd.com" class="text-sm md:text-base font-bold text-gray-900 border-b-2 border-gray-900 pb-1 transition-colors group-hover:text-opus-blue group-hover:border-opus-blue">
+                    info@opusbd.com
+                </a>
             </div>
         </div>
 
-        <!-- Web Link -->
-        <div class="mt-12 animate-fade-in-up delay-600">
-            <a href="https://www.opusbd.com" target="_blank" class="text-opus-light hover:text-white text-xs tracking-widest uppercase transition-colors duration-300">
-                www.opusbd.com
-            </a>
+        <!-- Secondary Info -->
+        <div class="mt-12 fade-up delay-300">
+            <p class="text-[10px] text-gray-400 font-medium">
+                &copy; 2026 Opus Communications. All rights reserved.
+            </p>
         </div>
 
     </div>
