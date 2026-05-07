@@ -64,12 +64,17 @@
     <div class="max-w-4xl w-full text-center flex flex-col items-center py-10">
 
         <!-- Logo -->
-        <div class="mb-10 w-64 md:w-80 h-auto relative flex justify-center animate-fade-in-up hover:scale-105 transition-transform duration-700 cursor-pointer group">
-            <div class="animate-float relative">
-                <!-- Ambient glow behind the logo -->
-                <div class="absolute inset-0 bg-sky-400/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div class="mb-10 mt-4 w-64 md:w-80 h-auto relative flex justify-center animate-fade-in-up hover:scale-105 transition-transform duration-700 cursor-pointer group">
+            
+            <!-- Soft Spotlight Behind Logo to make dark text readable -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[120%] bg-white/15 blur-[45px] rounded-[100%] pointer-events-none transition-all duration-700 group-hover:bg-white/25 group-hover:blur-[55px] group-hover:w-[140%] group-hover:h-[130%]"></div>
+            
+            <!-- Inner crisp glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-blue-200/20 blur-[25px] rounded-[100%] pointer-events-none"></div>
+
+            <div class="animate-float relative z-10 w-full drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]">
                 <img src="opus_logo_v2.png" alt="Opus Communications Logo" 
-                    class="w-full h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.05)] relative z-10 group-hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-500"
+                    class="w-full h-auto drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] transition-all duration-500"
                     onerror="this.onerror=null; this.outerHTML='<div class=\'text-5xl font-bold tracking-tighter\'><span class=\'text-white\'>OPUS</span><br><span class=\'text-2xl font-light italic tracking-normal\'>Communications</span></div>'">
             </div>
         </div>
