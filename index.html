@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opus Communications | Large Scale Thinking</title>
-    
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="Opus Communications - A premium communications agency thinking on a large scale.">
-    <meta name="keywords" content="communications, agency, branding, strategy, dhaka, opus">
+    <title>Opus Communications | Development Mode</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,49 +11,38 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'opus': {
-                            DEFAULT: '#004b8d',
-                            dark: '#020617',
-                            light: '#0ea5e9',
-                            muted: '#1e293b',
-                        }
+                        'opus': '#004b8d',
+                        'opus-dark': '#020617',
+                        'opus-light': '#0ea5e9',
                     },
                     fontFamily: {
                         serif: ['"Instrument Serif"', 'serif'],
                         sans: ['Inter', 'sans-serif'],
                     },
                     animation: {
-                        'slow-pan': 'pan 20s linear infinite',
                         'float': 'float 6s ease-in-out infinite',
-                        'fade-in-up': 'fadeInUp 1s ease-out both',
                         'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out both',
                     },
                     keyframes: {
-                        pan: {
-                            '0%': { backgroundPosition: '0% 50%' },
-                            '100%': { backgroundPosition: '100% 50%' },
-                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
                             '50%': { transform: 'translateY(-15px)' },
                         },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
                         pulseGlow: {
-                            '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
-                            '50%': { opacity: '0.6', transform: 'scale(1.1)' },
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.7', transform: 'scale(1.1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
                 }
@@ -66,295 +51,88 @@
     </script>
 
     <style>
-        body {
-            background-color: #020617;
-            color: #f8fafc;
-        }
-
-        .glass {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
         .mesh-bg {
             background-color: #020617;
             background-image: 
                 radial-gradient(at 0% 0%, hsla(210, 100%, 20%, 0.15) 0px, transparent 50%),
-                radial-gradient(at 50% 0%, hsla(200, 100%, 25%, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(210, 100%, 20%, 0.15) 0px, transparent 50%);
+                radial-gradient(at 100% 100%, hsla(200, 100%, 20%, 0.15) 0px, transparent 50%);
         }
-
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-500 { animation-delay: 500ms; }
-        .delay-700 { animation-delay: 700ms; }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #020617; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-600 { animation-delay: 600ms; }
     </style>
 </head>
-<body class="font-sans antialiased mesh-bg min-h-screen overflow-x-hidden">
+<body class="mesh-bg text-white font-sans min-h-screen flex items-center justify-center p-6 overflow-hidden">
 
-    <!-- Header / Nav -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 glass border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="Opus Logo" class="h-10 w-auto brightness-110">
-            </div>
-            
-            <nav class="hidden md:flex items-center gap-10">
-                <a href="#about" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">About</a>
-                <a href="#services" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Services</a>
-                <a href="#contact" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Contact</a>
-            </nav>
+    <!-- Decorative Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-opus/10 blur-[100px] rounded-full pointer-events-none animate-pulse-glow"></div>
 
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="px-5 py-2.5 rounded-full bg-opus hover:bg-opus-light text-white text-sm font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(0,75,141,0.3)]">
-                    Get in Touch
-                </a>
+    <div class="max-w-4xl w-full text-center relative z-10">
+        
+        <!-- Logo Section -->
+        <div class="mb-12 animate-fade-in-up">
+            <div class="animate-float inline-block">
+                <img src="logo.png" alt="Opus Logo" class="h-24 md:h-32 w-auto brightness-110 drop-shadow-[0_0_20px_rgba(0,75,141,0.4)]">
             </div>
         </div>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 flex flex-col items-center text-center overflow-hidden">
-            <!-- Decorative Glow -->
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-opus/10 blur-[120px] rounded-full pointer-events-none animate-pulse-glow"></div>
-            
-            <!-- Badge -->
-            <div class="animate-fade-in-up mb-8">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-opus/20 text-xs font-semibold uppercase tracking-widest text-opus-light">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-opus-light opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-opus-light"></span>
-                    </span>
-                    Digital Agency
-                </div>
-            </div>
-
-            <!-- Title -->
-            <h1 class="animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8 tracking-tight">
-                Thinking on a <br> 
-                <span class="italic text-opus-light drop-shadow-[0_0_30px_rgba(14,165,233,0.3)]">large scale</span>.
-            </h1>
-
-            <!-- Subtitle -->
-            <p class="animate-fade-in-up delay-200 max-w-2xl text-lg md:text-xl text-slate-400 font-light leading-relaxed mb-12">
-                We are Opus Communications. A strategic creative studio dedicated to elevating brands through expansive thinking and precise execution.
-            </p>
-
-            <!-- CTA -->
-            <div class="animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4">
-                <a href="#services" class="px-8 py-4 rounded-full bg-white text-opus-dark font-bold hover:scale-105 transition-all duration-300">
-                    Explore Our Work
-                </a>
-                <a href="#contact" class="px-8 py-4 rounded-full glass border border-white/10 text-white font-bold hover:bg-white/5 transition-all duration-300">
-                    Learn More
-                </a>
-            </div>
-
-            <!-- Floating Element -->
-            <div class="animate-float mt-20 hidden md:block">
-                <div class="w-10 h-16 rounded-full border-2 border-white/10 relative">
-                    <div class="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-opus-light rounded-full animate-bounce"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About / Vision Section -->
-        <section id="about" class="py-24 px-6 bg-opus-dark/50">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="relative group">
-                    <div class="absolute inset-0 bg-opus blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                    <div class="relative aspect-square rounded-3xl overflow-hidden glass border border-white/10 p-2">
-                        <div class="w-full h-full rounded-2xl bg-gradient-to-br from-opus/20 to-transparent flex items-center justify-center">
-                            <img src="logo.png" alt="Opus Icon" class="w-32 h-auto opacity-50 grayscale">
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-opus-light mb-6">Our Vision</h2>
-                    <h3 class="text-4xl md:text-5xl font-serif leading-tight mb-8">
-                        Precision in Every <br> Detail, Vision in <br> Every Strategy.
-                    </h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-10 font-light">
-                        Founded on the principle that communications should be impactful and enduring, Opus provides a full suite of services designed for the modern landscape. From high-level brand strategy to digital transformation, we help you scale your message.
-                    </p>
-                    <div class="grid grid-cols-2 gap-8">
-                        <div>
-                            <div class="text-3xl font-serif text-white mb-2">12+</div>
-                            <div class="text-sm text-slate-500 uppercase tracking-widest">Years Experience</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-serif text-white mb-2">200+</div>
-                            <div class="text-sm text-slate-500 uppercase tracking-widest">Projects Scaled</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-24 px-6 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-20">
-                    <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-opus-light mb-6">Expertise</h2>
-                    <h3 class="text-4xl md:text-6xl font-serif">What we bring to life</h3>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="p-10 rounded-3xl glass border border-white/5 hover:border-opus/30 hover:-translate-y-2 transition-all duration-500 group">
-                        <div class="w-14 h-14 rounded-2xl bg-opus/10 flex items-center justify-center text-opus-light mb-8 group-hover:bg-opus group-hover:text-white transition-all">
-                            <i data-lucide="layers"></i>
-                        </div>
-                        <h4 class="text-2xl font-serif mb-4 text-white">Brand Strategy</h4>
-                        <p class="text-slate-400 font-light leading-relaxed">Developing long-term roadmaps for your brand's growth and visual identity.</p>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div class="p-10 rounded-3xl glass border border-white/5 hover:border-opus/30 hover:-translate-y-2 transition-all duration-500 group">
-                        <div class="w-14 h-14 rounded-2xl bg-opus/10 flex items-center justify-center text-opus-light mb-8 group-hover:bg-opus group-hover:text-white transition-all">
-                            <i data-lucide="monitor"></i>
-                        </div>
-                        <h4 class="text-2xl font-serif mb-4 text-white">Digital Presence</h4>
-                        <p class="text-slate-400 font-light leading-relaxed">Creating seamless digital experiences that engage and convert on a global scale.</p>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="p-10 rounded-3xl glass border border-white/5 hover:border-opus/30 hover:-translate-y-2 transition-all duration-500 group">
-                        <div class="w-14 h-14 rounded-2xl bg-opus/10 flex items-center justify-center text-opus-light mb-8 group-hover:bg-opus group-hover:text-white transition-all">
-                            <i data-lucide="megaphone"></i>
-                        </div>
-                        <h4 class="text-2xl font-serif mb-4 text-white">Public Relations</h4>
-                        <p class="text-slate-400 font-light leading-relaxed">Amplifying your story through strategic media placement and community engagement.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-24 px-6 bg-gradient-to-b from-transparent to-opus-dark">
-            <div class="max-w-7xl mx-auto rounded-[3rem] glass p-12 md:p-20 border border-white/10 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-opus/10 blur-[100px] rounded-full pointer-events-none"></div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif mb-10 leading-tight">
-                            Ready to <span class="italic text-opus-light">scale</span> <br> your vision?
-                        </h2>
-                        <div class="space-y-8">
-                            <div class="flex items-start gap-6">
-                                <div class="w-12 h-12 rounded-xl glass border border-white/10 flex items-center justify-center text-opus-light shrink-0">
-                                    <i data-lucide="map-pin"></i>
-                                </div>
-                                <div>
-                                    <h5 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-2">Our Office</h5>
-                                    <p class="text-xl text-white font-light">596/C Khilgaon, Road 2,<br>Dhaka 1219</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-6">
-                                <div class="w-12 h-12 rounded-xl glass border border-white/10 flex items-center justify-center text-opus-light shrink-0">
-                                    <i data-lucide="mail"></i>
-                                </div>
-                                <div>
-                                    <h5 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-2">Email Us</h5>
-                                    <p class="text-xl text-white font-light">info@opusbd.com<br>opusbd1@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-6">
-                                <div class="w-12 h-12 rounded-xl glass border border-white/10 flex items-center justify-center text-opus-light shrink-0">
-                                    <i data-lucide="phone"></i>
-                                </div>
-                                <div>
-                                    <h5 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-2">Hotline</h5>
-                                    <p class="text-xl text-white font-light">+880 1711 387708<br>+880 1911 484826</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name" class="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-opus-light focus:outline-none transition-all text-white">
-                            <input type="email" placeholder="Email Address" class="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-opus-light focus:outline-none transition-all text-white">
-                        </div>
-                        <input type="text" placeholder="Subject" class="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-opus-light focus:outline-none transition-all text-white">
-                        <textarea placeholder="Tell us about your project" rows="5" class="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-opus-light focus:outline-none transition-all text-white"></textarea>
-                        <button type="submit" class="w-full py-5 rounded-2xl bg-opus text-white font-bold hover:bg-opus-light transition-all duration-300 shadow-xl">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-white/5 bg-opus-dark">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-slate-500 text-sm">
-            <div class="flex items-center gap-4">
-                <img src="logo.png" alt="Opus" class="h-6 w-auto opacity-50 grayscale">
-                <span>&copy; 2026 Opus Communications. All rights reserved.</span>
-            </div>
-            
-            <div class="flex items-center gap-8">
-                <a href="https://www.opusbd.com" target="_blank" class="hover:text-opus-light transition-colors">www.opusbd.com</a>
-                <a href="#" class="hover:text-opus-light transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-opus-light transition-colors">Terms of Service</a>
+        <!-- Development Badge -->
+        <div class="animate-fade-in-up delay-200 mb-10">
+            <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full glass border border-opus/30 shadow-lg">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-opus-light opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-opus-light"></span>
+                </span>
+                <span class="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-opus-light">Development Mode</span>
             </div>
         </div>
-    </footer>
 
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        <!-- Main Heading -->
+        <h1 class="animate-fade-in-up delay-400 text-5xl md:text-7xl font-serif leading-tight mb-6 tracking-tight">
+            We're building <br> 
+            <span class="italic text-opus-light">something new.</span>
+        </h1>
 
-        // Scroll Reveal Effect
-        const observerOptions = {
-            threshold: 0.1
-        };
+        <!-- Tagline -->
+        <p class="animate-fade-in-up delay-600 text-lg md:text-2xl text-slate-400/80 font-light italic tracking-widest mb-16">
+            ...thinking on a large scale
+        </p>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+        <!-- Footer / Contact Info -->
+        <div class="animate-fade-in-up delay-600 pt-10 border-t border-white/5 max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Address</h3>
+                <p class="text-xs md:text-sm text-slate-300 leading-relaxed font-light">
+                    596/C Khilgaon, Road 2,<br> Dhaka 1219
+                </p>
+            </div>
+            <div class="text-center">
+                <h3 class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Email</h3>
+                <p class="text-xs md:text-sm text-slate-300 font-light">
+                    info@opusbd.com<br>opusbd1@gmail.com
+                </p>
+            </div>
+            <div class="text-center md:text-right">
+                <h3 class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-3">Contact</h3>
+                <p class="text-xs md:text-sm text-slate-300 font-light">
+                    +880 1711 387708<br>+880 1911 484826
+                </p>
+            </div>
+        </div>
 
-        document.querySelectorAll('section > div').forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
-        });
+        <!-- Web Link -->
+        <div class="mt-12 animate-fade-in-up delay-600">
+            <a href="https://www.opusbd.com" target="_blank" class="text-opus-light hover:text-white text-xs tracking-widest uppercase transition-colors duration-300">
+                www.opusbd.com
+            </a>
+        </div>
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('py-4', 'bg-opus-dark/80');
-                header.classList.remove('py-6', 'bg-transparent');
-            } else {
-                header.classList.remove('py-4', 'bg-opus-dark/80');
-                header.classList.add('py-6', 'bg-transparent');
-            }
-        });
-    </script>
+    </div>
+
 </body>
 </html>
