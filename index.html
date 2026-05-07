@@ -18,6 +18,10 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    colors: {
+                        'opus-blue': '#004b8d',
+                        'opus-dark': '#041528',
+                    },
                     fontFamily: {
                         serif: ['"Instrument Serif"', 'serif'],
                     },
@@ -36,8 +40,8 @@
                             '50%': { transform: 'translateY(-10px)' },
                         },
                         glow: {
-                            '0%': { boxShadow: '0 0 5px rgba(56, 189, 248, 0.2)' },
-                            '100%': { boxShadow: '0 0 20px rgba(56, 189, 248, 0.6), 0 0 40px rgba(56, 189, 248, 0.2)' },
+                            '0%': { boxShadow: '0 0 5px rgba(0, 75, 141, 0.2)' },
+                            '100%': { boxShadow: '0 0 20px rgba(0, 75, 141, 0.6), 0 0 40px rgba(0, 75, 141, 0.2)' },
                         }
                     }
                 }
@@ -58,32 +62,18 @@
 <!-- Using the dark blue color sampled directly from your logo background -->
 
 <body
-    class="bg-[#081e3a] text-white font-serif min-h-screen flex flex-col items-center justify-center p-6 sm:p-10 selection:bg-blue-500 selection:text-white">
+    class="bg-opus-dark text-white font-serif min-h-screen flex flex-col items-center justify-center p-6 sm:p-10 selection:bg-opus-blue selection:text-white">
 
     <!-- Main Content Container -->
     <div class="max-w-4xl w-full text-center flex flex-col items-center py-10">
 
-        <!-- Typographic Logo -->
-        <div class="mb-12 mt-6 relative flex justify-center animate-fade-in-up hover:scale-[1.02] transition-transform duration-700 cursor-default group select-none">
-            
-            <!-- Glowing aura behind text -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-sky-500/10 blur-[60px] rounded-[100%] pointer-events-none transition-all duration-700 group-hover:bg-sky-400/20 group-hover:blur-[70px]"></div>
-
-            <div class="animate-float relative z-10 flex flex-col items-center">
-                <!-- Main OPUS text -->
-                <div class="text-[5rem] md:text-[7rem] lg:text-[8rem] font-bold tracking-tight leading-none mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white via-blue-100 to-sky-500 drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] group-hover:drop-shadow-[0_0_30px_rgba(56,189,248,0.6)] transition-all duration-700">
-                    OPUS
-                </div>
-                
-                <!-- Communications subtext -->
-                <div class="flex items-center gap-4 md:gap-6 group-hover:gap-8 transition-all duration-700">
-                    <div class="h-[1px] w-12 md:w-20 bg-gradient-to-r from-transparent via-sky-400/50 to-sky-400"></div>
-                    <div class="text-sm md:text-base tracking-[0.4em] uppercase font-sans text-sky-200/90 font-light">
-                        Communications
-                    </div>
-                    <div class="h-[1px] w-12 md:w-20 bg-gradient-to-l from-transparent via-sky-400/50 to-sky-400"></div>
-                </div>
+        <!-- Brand Logo -->
+        <div class="mb-12 mt-6 relative flex justify-center animate-fade-in-up hover:scale-[1.05] transition-transform duration-700 cursor-pointer group">
+            <div class="animate-float relative z-10">
+                <img src="logo.png" alt="Opus Communications" class="h-28 md:h-36 w-auto brightness-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.2)] transition-all duration-700">
             </div>
+            <!-- Glow effect behind logo -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-opus-blue/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-opus-blue/20 transition-all duration-700"></div>
         </div>
 
         <!-- Animated Development Badge -->
@@ -106,7 +96,7 @@
 
         <!-- Tagline -->
         <div class="mb-16 relative px-4 animate-fade-in-up delay-500">
-            <p class="text-blue-300/50 italic text-2xl md:text-3xl tracking-[0.15em] font-light hover:text-blue-300/80 transition-colors duration-500 cursor-default">
+            <p class="text-opus-blue/60 italic text-2xl md:text-3xl tracking-[0.15em] font-light hover:text-opus-blue/90 transition-colors duration-500 cursor-default">
                 ...thinking on a large scale
             </p>
         </div>
@@ -119,8 +109,8 @@
 
                 <!-- Address Card -->
                 <div
-                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
-                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic group-hover:text-sky-300 transition-colors">Address</h3>
+                    class="bg-white/[0.03] p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/[0.07] hover:border-opus-blue/30 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <h3 class="text-opus-blue text-2xl mb-4 tracking-widest italic group-hover:text-sky-400 transition-colors">Address</h3>
                     <p class="text-blue-100/90 text-xl md:text-2xl tracking-wide leading-relaxed">
                         596/C Khilgaon, Road 2,<br>
                         Dhaka 1219
@@ -129,8 +119,8 @@
 
                 <!-- Contact Card -->
                 <div
-                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
-                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic group-hover:text-sky-300 transition-colors">Contact</h3>
+                    class="bg-white/[0.03] p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/[0.07] hover:border-opus-blue/30 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <h3 class="text-opus-blue text-2xl mb-4 tracking-widest italic group-hover:text-sky-400 transition-colors">Contact</h3>
 
                     <div class="space-y-6">
                         <!-- Emails -->
@@ -157,10 +147,10 @@
 
                         <!-- Website -->
                         <div class="pt-2">
-                            <span class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Web
+                            <span class="block text-sm text-opus-blue/50 tracking-[0.2em] uppercase mb-2 font-sans">Web
                                 Site</span>
                             <a href="https://www.opusbd.com" target="_blank"
-                                class="text-sky-300 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">www.opusbd.com</a>
+                                class="text-opus-blue hover:text-sky-400 transition-colors block text-xl md:text-2xl tracking-wider">www.opusbd.com</a>
                         </div>
                     </div>
                 </div>
