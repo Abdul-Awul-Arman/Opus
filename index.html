@@ -13,34 +13,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-    <!-- Configure Tailwind to use the custom font -->
+    <!-- Configure Tailwind to use the custom font and animations -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         serif: ['"Instrument Serif"', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out both',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px rgba(56, 189, 248, 0.2)' },
+                            '100%': { boxShadow: '0 0 20px rgba(56, 189, 248, 0.6), 0 0 40px rgba(56, 189, 248, 0.2)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Optional custom delays if tailwind's aren't enough */
+        .delay-400 { animation-delay: 400ms; }
+        .delay-600 { animation-delay: 600ms; }
+        .delay-800 { animation-delay: 800ms; }
+        .delay-1000 { animation-delay: 1000ms; }
     </style>
 </head>
 <!-- Using the dark blue color sampled directly from your logo background -->
@@ -49,18 +61,19 @@
     class="bg-[#081e3a] text-white font-serif min-h-screen flex flex-col items-center justify-center p-6 sm:p-10 selection:bg-blue-500 selection:text-white">
 
     <!-- Main Content Container -->
-    <div class="max-w-4xl w-full text-center flex flex-col items-center animate-fade-in py-10">
+    <div class="max-w-4xl w-full text-center flex flex-col items-center py-10">
 
         <!-- Logo -->
-        <!-- Using the filename of the image you uploaded -->
-        <div class="mb-10 w-64 md:w-80 h-auto relative flex justify-center">
-            <img src="image_ee8d78.png" alt="Opus Communications Logo" class="w-full h-auto drop-shadow-xl"
-                onerror="this.onerror=null; this.outerHTML='<div class=\'text-5xl font-bold tracking-tighter\'><span class=\'text-white\'>OPUS</span><br><span class=\'text-2xl font-light italic tracking-normal\'>Communications</span></div>'">
+        <div class="mb-10 w-64 md:w-80 h-auto relative flex justify-center animate-fade-in-up hover:scale-105 transition-transform duration-700 cursor-pointer">
+            <div class="animate-float">
+                <img src="image_ee8d78.png" alt="Opus Communications Logo" class="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+                    onerror="this.onerror=null; this.outerHTML='<div class=\'text-5xl font-bold tracking-tighter\'><span class=\'text-white\'>OPUS</span><br><span class=\'text-2xl font-light italic tracking-normal\'>Communications</span></div>'">
+            </div>
         </div>
 
         <!-- Animated Development Badge -->
         <div
-            class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 mb-8 shadow-lg backdrop-blur-md">
+            class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 mb-8 shadow-lg backdrop-blur-md animate-fade-in-up delay-200 hover:bg-white/10 hover:border-white/20 transition-all duration-300 animate-glow cursor-default">
             <span class="relative flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
                 <span
@@ -71,28 +84,28 @@
         </div>
 
         <!-- Heading -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight tracking-wider">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight tracking-wider animate-fade-in-up delay-300">
             We're building <br class="hidden md:block" /> something <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-200">new</span>.
+                class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-200 animate-pulse inline-block">new</span>.
         </h1>
 
         <!-- Tagline -->
-        <div class="mb-16 relative px-4">
-            <p class="text-blue-300/50 italic text-2xl md:text-3xl tracking-[0.15em] font-light">
+        <div class="mb-16 relative px-4 animate-fade-in-up delay-500">
+            <p class="text-blue-300/50 italic text-2xl md:text-3xl tracking-[0.15em] font-light hover:text-blue-300/80 transition-colors duration-500 cursor-default">
                 ...thinking on a large scale
             </p>
         </div>
 
         <!-- Contact Section (From first image) -->
-        <div class="w-full border-t border-white/10 pt-12 mt-4">
+        <div class="w-full border-t border-white/10 pt-12 mt-4 animate-fade-in-up delay-700">
             <h2 class="text-3xl md:text-4xl text-white mb-10 tracking-widest">Get in touch with us</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left max-w-3xl mx-auto">
 
                 <!-- Address Card -->
                 <div
-                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 shadow-xl">
-                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic">Address</h3>
+                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic group-hover:text-sky-300 transition-colors">Address</h3>
                     <p class="text-blue-100/90 text-xl md:text-2xl tracking-wide leading-relaxed">
                         596/C Khilgaon, Road 2,<br>
                         Dhaka 1219
@@ -101,8 +114,8 @@
 
                 <!-- Contact Card -->
                 <div
-                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 shadow-xl">
-                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic">Contact</h3>
+                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 shadow-xl group">
+                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic group-hover:text-sky-300 transition-colors">Contact</h3>
 
                     <div class="space-y-6">
                         <!-- Emails -->
