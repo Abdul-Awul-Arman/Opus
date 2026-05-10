@@ -117,15 +117,13 @@
     <!-- ═══════════════ CENTERPIECE ═══════════════ -->
     <div class="w-full max-w-5xl flex flex-col items-center text-center">
       
-      <!-- Logo in a prominent glass card (Scaled Down) -->
-      <div class="mb-8 animate-float">
-        <div class="glass rounded-[2rem] px-10 py-8 md:px-14 md:py-10">
-          <img 
-            src="./logo.svg" 
-            alt="Opus Logo" 
-            class="h-16 md:h-20 lg:h-24 w-auto" 
-          />
-        </div>
+      <!-- Logo Centerpiece (No Background) -->
+      <div class="mb-10 animate-float relative group">
+        <img 
+          src="./logo.svg" 
+          alt="Opus Logo" 
+          class="h-16 md:h-20 lg:h-24 w-auto transition-transform duration-500 group-hover:scale-105" 
+        />
       </div>
 
       <!-- Main Headline (Scaled Down) -->
@@ -141,12 +139,12 @@
         We are redesigning our digital presence to reflect our commitment to excellence. A new experience awaits.
       </p>
 
-      <!-- ═══════════════ BENTO CONTACT SECTION ═══════════════ -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full animate-fade-in" style="animation-delay: 1.2s;">
+      <!-- ═══════════════ MINIMAL CONTACT SECTION ═══════════════ -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full animate-fade-in" style="animation-delay: 1.2s;">
         
-        <!-- Location Card -->
-        <div class="glass p-10 rounded-[2.5rem] flex flex-col items-center text-center md:items-start md:text-left transition-all duration-500 hover:-translate-y-2">
-          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/20 flex items-center justify-center mb-6 text-[#4db8ff]">
+        <!-- Location Section -->
+        <div class="flex flex-col items-center text-center md:items-start md:text-left group">
+          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/10 flex items-center justify-center mb-6 text-[#4db8ff] group-hover:bg-[#00558F]/20 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
           <h3 class="font-serif text-2xl italic text-white mb-3">Location</h3>
@@ -156,9 +154,9 @@
           </p>
         </div>
 
-        <!-- Contact Card -->
-        <div class="glass p-10 rounded-[2.5rem] flex flex-col items-center text-center md:items-start md:text-left transition-all duration-500 hover:-translate-y-2">
-          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/20 flex items-center justify-center mb-6 text-[#4db8ff]">
+        <!-- Contact Section -->
+        <div class="flex flex-col items-center text-center md:items-start md:text-left group">
+          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/10 flex items-center justify-center mb-6 text-[#4db8ff] group-hover:bg-[#00558F]/20 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
           <h3 class="font-serif text-2xl italic text-white mb-3">Connect</h3>
@@ -168,14 +166,14 @@
           </div>
         </div>
 
-        <!-- Call to Action / Social Card -->
-        <div class="glass p-10 rounded-[2.5rem] flex flex-col items-center text-center md:items-start md:text-left transition-all duration-500 hover:-translate-y-2">
-          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/20 flex items-center justify-center mb-6 text-[#4db8ff]">
+        <!-- Status Section -->
+        <div class="flex flex-col items-center text-center md:items-start md:text-left group">
+          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/10 flex items-center justify-center mb-6 text-[#4db8ff] group-hover:bg-[#00558F]/20 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="font-serif text-2xl italic text-white mb-3">Stay Updated</h3>
-          <p class="text-slate-400 text-sm mb-4">We're building something remarkable.</p>
-          <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+          <h3 class="font-serif text-2xl italic text-white mb-3">Status</h3>
+          <p class="text-slate-400 text-sm mb-4 italic tracking-wide">Building something remarkable.</p>
+          <div class="w-24 h-1 bg-white/5 rounded-full overflow-hidden">
             <div class="h-full bg-[#00558F] animate-[pulse_2s_infinite]" style="width: 75%"></div>
           </div>
         </div>
