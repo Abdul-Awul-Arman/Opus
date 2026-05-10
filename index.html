@@ -1,142 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opus Communications - Under Construction</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opus — The Future is Coming</title>
+  <meta name="description" content="Opus is evolving. A premium digital experience is under construction." />
 
-    <!-- Google Fonts: Instrument Serif -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Instrument Serif', 'Georgia', 'serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'float-slow': 'float 8s ease-in-out infinite',
+            'pulse-soft': 'pulseSoft 4s ease-in-out infinite',
+            'reveal': 'reveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-15px)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '0.4', scale: '1' },
+              '50%': { opacity: '0.6', scale: '1.05' },
+            },
+            reveal: {
+              from: { transform: 'translateY(100px)', opacity: '0' },
+              to: { transform: 'translateY(0)', opacity: '1' },
+            },
+            fadeIn: {
+              from: { opacity: '0' },
+              to: { opacity: '1' },
+            },
+          },
+        },
+      },
+    };
+  </script>
 
-    <!-- Configure Tailwind to use the custom font -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Instrument Serif"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background-color: #020617; 
+      color: white; 
+      overflow-x: hidden;
+    }
 
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-    </style>
+    /* Premium Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .glass:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Mesh background */
+    .mesh-gradient {
+      background: radial-gradient(at 0% 0%, rgba(0, 85, 143, 0.12) 0px, transparent 50%),
+                  radial-gradient(at 100% 100%, rgba(54, 58, 150, 0.12) 0px, transparent 50%),
+                  radial-gradient(at 50% 50%, rgba(0, 42, 84, 0.1) 0px, transparent 80%);
+    }
+
+    /* Hide scrollbar */
+    ::-webkit-scrollbar { display: none; }
+
+    /* Text stroke for that high-end look */
+    .text-outline {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+      color: transparent;
+    }
+  </style>
 </head>
-<!-- Using the dark blue color sampled directly from your logo background -->
 
-<body
-    class="bg-[#081e3a] text-white font-serif min-h-screen flex flex-col items-center justify-center p-6 sm:p-10 selection:bg-blue-500 selection:text-white">
+<body class="font-sans antialiased">
 
-    <!-- Main Content Container -->
-    <div class="max-w-4xl w-full text-center flex flex-col items-center animate-fade-in py-10">
+  <!-- Background Layer -->
+  <div class="fixed inset-0 mesh-gradient z-0"></div>
+  <div class="fixed inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle, white 0.5px, transparent 0.5px); background-size: 40px 40px;"></div>
+  
+  <!-- Subtle Light Leaks -->
+  <div class="fixed -top-[20%] -left-[10%] w-[600px] h-[600px] bg-blue-600/10 blur-[120px] rounded-full animate-pulse-soft"></div>
+  <div class="fixed -bottom-[20%] -right-[10%] w-[500px] h-[500px] bg-indigo-600/10 blur-[100px] rounded-full animate-pulse-soft" style="animation-delay: 2s;"></div>
 
+  <!-- MAIN WRAPPER -->
+  <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 py-8 lg:py-12">
 
+    <!-- Top Status Badge -->
+    <div class="mb-8 animate-fade-in">
+      <div class="glass flex items-center gap-3 px-4 py-2 rounded-full border border-white/10">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4db8ff] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#4db8ff]"></span>
+        </span>
+        <span class="text-[9px] font-bold tracking-[0.3em] text-[#4db8ff] uppercase">Development Mode</span>
+      </div>
+    </div>
 
-        <!-- Animated Development Badge -->
-        <div
-            class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 mb-8 shadow-lg backdrop-blur-md">
-            <span class="relative flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span
-                    class="relative inline-flex rounded-full h-3 w-3 bg-sky-500 shadow-[0_0_8px_rgba(14,165,233,0.8)]"></span>
-            </span>
-            <span class="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-sky-100">Development
-                Mode</span>
+    <!-- ═══════════════ CENTERPIECE ═══════════════ -->
+    <div class="w-full max-w-5xl flex flex-col items-center text-center">
+      
+      <!-- Logo in a prominent glass card (Scaled Down) -->
+      <div class="mb-8 animate-float">
+        <div class="glass rounded-[2rem] px-10 py-8 md:px-14 md:py-10">
+          <img 
+            src="./logo.svg" 
+            alt="Opus Logo" 
+            class="h-16 md:h-20 lg:h-24 w-auto" 
+          />
         </div>
+      </div>
 
-        <!-- Heading -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight tracking-wider">
-            We're building <br class="hidden md:block" /> something <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-200">new</span>.
+      <!-- Main Headline (Scaled Down) -->
+      <div class="mb-4 overflow-hidden py-1">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif italic text-white leading-tight animate-reveal" style="animation-delay: 0.2s;">
+          The Future <span class="text-outline">is</span> <br/>
+          <span class="bg-gradient-to-r from-white via-white/80 to-[#4db8ff] bg-clip-text text-transparent italic">Coming Soon</span>
         </h1>
+      </div>
 
-        <!-- Tagline -->
-        <div class="mb-16 relative px-4">
-            <p class="text-blue-300/50 italic text-2xl md:text-3xl tracking-[0.15em] font-light">
-                ...thinking on a large scale
-            </p>
+      <!-- Subtitle (Scaled Down) -->
+      <p class="text-base md:text-lg text-slate-400 max-w-xl mx-auto leading-relaxed animate-fade-in mb-10" style="animation-delay: 0.8s;">
+        We are redesigning our digital presence to reflect our commitment to excellence. A new experience awaits.
+      </p>
+
+      <!-- ═══════════════ BENTO CONTACT SECTION ═══════════════ -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full animate-fade-in" style="animation-delay: 1.2s;">
+        
+        <!-- Location Card -->
+        <div class="glass p-10 rounded-[2.5rem] flex flex-col items-center text-center md:items-start md:text-left transition-all duration-500 hover:-translate-y-2">
+          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/20 flex items-center justify-center mb-6 text-[#4db8ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl italic text-white mb-3">Location</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            596/C Khilgaon, Road 2,<br/>
+            Dhaka 1219, Bangladesh
+          </p>
         </div>
 
-        <!-- Contact Section (From first image) -->
-        <div class="w-full border-t border-white/10 pt-12 mt-4">
-            <h2 class="text-3xl md:text-4xl text-white mb-10 tracking-widest">Get in touch with us</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left max-w-3xl mx-auto">
-
-                <!-- Address Card -->
-                <div
-                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 shadow-xl">
-                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic">Address</h3>
-                    <p class="text-blue-100/90 text-xl md:text-2xl tracking-wide leading-relaxed">
-                        596/C Khilgaon, Road 2,<br>
-                        Dhaka 1219
-                    </p>
-                </div>
-
-                <!-- Contact Card -->
-                <div
-                    class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 shadow-xl">
-                    <h3 class="text-sky-400 text-2xl mb-4 tracking-widest italic">Contact</h3>
-
-                    <div class="space-y-6">
-                        <!-- Emails -->
-                        <div>
-                            <span class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Email
-                                Us</span>
-                            <a href="mailto:info@opusbd.com"
-                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider mb-1">info@opusbd.com</a>
-                            <a href="mailto:opusbd1@gmail.com"
-                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">opusbd1@gmail.com</a>
-                        </div>
-
-                        <!-- Hotlines -->
-                        <div>
-                            <span
-                                class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Hotline</span>
-                            <a href="tel:+8801711387708"
-                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider mb-1">+880
-                                1711 387708</a>
-                            <a href="tel:+8801911484826"
-                                class="text-blue-100/90 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">+880
-                                1911 484826</a>
-                        </div>
-
-                        <!-- Website -->
-                        <div class="pt-2">
-                            <span class="block text-sm text-blue-200/50 tracking-[0.2em] uppercase mb-2 font-sans">Web
-                                Site</span>
-                            <a href="https://www.opusbd.com" target="_blank"
-                                class="text-sky-300 hover:text-white transition-colors block text-xl md:text-2xl tracking-wider">www.opusbd.com</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Contact Card -->
+        <div class="glass p-10 rounded-[2.5rem] flex flex-col items-center text-center md:items-start md:text-left transition-all duration-500 hover:-translate-y-2">
+          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/20 flex items-center justify-center mb-6 text-[#4db8ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl italic text-white mb-3">Connect</h3>
+          <div class="space-y-1">
+            <a href="mailto:info@opusbd.com" class="block text-slate-400 text-sm hover:text-white transition-colors">info@opusbd.com</a>
+            <a href="tel:+8801711387708" class="block text-slate-400 text-sm hover:text-white transition-colors">+880 1711 387708</a>
+          </div>
         </div>
+
+        <!-- Call to Action / Social Card -->
+        <div class="glass p-10 rounded-[2.5rem] flex flex-col items-center text-center md:items-start md:text-left transition-all duration-500 hover:-translate-y-2">
+          <div class="h-12 w-12 rounded-2xl bg-[#00558F]/20 flex items-center justify-center mb-6 text-[#4db8ff]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl italic text-white mb-3">Stay Updated</h3>
+          <p class="text-slate-400 text-sm mb-4">We're building something remarkable.</p>
+          <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+            <div class="h-full bg-[#00558F] animate-[pulse_2s_infinite]" style="width: 75%"></div>
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
-</body>
+    <!-- Footer -->
+    <footer class="mt-24 animate-fade-in" style="animation-delay: 1.5s;">
+      <p class="text-[10px] font-bold tracking-[0.5em] text-slate-600 uppercase">
+        &copy; 2026 Opus Communications
+      </p>
+    </footer>
 
+  </div>
+
+</body>
 </html>
